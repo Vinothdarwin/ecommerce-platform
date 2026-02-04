@@ -55,7 +55,3 @@ jobs:
         run: |
           docker build -t darwinvinoth/vinothsre:frontend-service-latest ./frontend
           docker push darwinvinoth/vinothsre:frontend-service-latest
-
-      - name: Check secrets
-        run: |
-          echo "Username is set? true
