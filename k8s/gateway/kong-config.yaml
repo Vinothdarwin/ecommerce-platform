@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kong-config
+  namespace: ecommerce
+data:
+  kong.yml: |
+    _format_version: "3.0"
+    
+    services:
+      - name: auth-service
+        url: http://auth-service:3001
+        routes:
+          - name: auth-routes
+            paths:
+              - /auth
+            strip_path: true
+      
+      - name: product-service
+        url: http://product-service:3002
+        routes:
+          - name: product-routes
+            paths:
+              - /products
+              - /categories
+            strip_path: false
+      
+      - name: cart-service
+        url: http://cart-service:3003
+        routes:
+          - name: cart-routes
+            paths:
+              - /cart
+            strip_path: true
+    
+    plugins:
+      - name: cors
+        config:
+          origins:
+            - "*"
+          methods:
+            - GET
+            - POST
+            - PUT
+            - PATCH
+            - DELETE
+            - OPTIONS
+          headers:
+            - Accept
+            - Authorization
+            - Content-Type
+          credentials: true
+          max_age: 3600
+      
+      - name: rate-limiting
+        config:
+          minute: 100
+          policy: local

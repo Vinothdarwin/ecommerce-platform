@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecommerce-config
+  namespace: ecommerce
+data:
+  MONGODB_URI: "mongodb://mongo:27017"
+  REDIS_URL: "redis://redis:6379"
+  AUTH_SERVICE_URL: "http://auth-service:3001"
+  PRODUCT_SERVICE_URL: "http://product-service:3002"
+  CART_SERVICE_URL: "http://cart-service:3003"
