@@ -59,6 +59,3 @@ jobs:
       - name: Check secrets
         run: |
           echo "Username is set? true
-          
-          docker build -t darwinvinoth/vinothsre/cart-service:latest ./cart-service
-          docker push darwinvinoth/vinothsre/cart-service:latest
