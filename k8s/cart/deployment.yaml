@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: cart-service
-        image: ecommerce/cart-service:latest
+        image: darwinvinoth/vinothsre:cart-service-latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3003

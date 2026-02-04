@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: auth-service
-        image: ecommerce/auth-service:latest
+        image: darwinvinoth/vinothsre:auth-service-latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3001

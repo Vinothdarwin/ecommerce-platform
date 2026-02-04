@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ecommerce/frontend:latest
+        image: darwinvinoth/vinothsre:frontend-latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

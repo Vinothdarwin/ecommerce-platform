@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: product-service
-        image: ecommerce/product-service:latest
+        image: darwinvinoth/vinothsre:product-service-latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3002
