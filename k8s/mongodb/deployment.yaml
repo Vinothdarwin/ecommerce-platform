@@ -57,3 +57,21 @@ spec:
       volumes:
       - name: mongo-data
         emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  namespace: ecommerce
+  labels:
+    app: mongo
+spec:
+  type: ClusterIP
+  selector:
+    app: mongo
+  ports:
+  - name: mongodb
+    port: 27017
+    targetPort: 27017
+    protocol: TCP
+  sessionAffinity: None
