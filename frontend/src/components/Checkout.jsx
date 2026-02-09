@@ -47,7 +47,7 @@ function Checkout({ setCartCount }) {
       const userId = payload.userId;
 
       // Step 1: Create Order
-      const orderResponse = await fetch('http://localhost:8000/orders/api/orders', {
+      const orderResponse = await fetch('/api/orders/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ function Checkout({ setCartCount }) {
       const orderId = orderData.order.orderId;
 
       // Step 2: Process Payment
-      const paymentResponse = await fetch('http://localhost:8000/payments/process-payment', {
+      const paymentResponse = await fetch('/api/payments/process-payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ function Checkout({ setCartCount }) {
       }
 
       // Step 3: Clear cart
-      await fetch('http://localhost:8000/cart', {
+      await fetch('/api/cart', {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

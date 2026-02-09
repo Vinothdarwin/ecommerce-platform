@@ -37,7 +37,7 @@ function ReviewForm({ productId, onReviewSubmitted }) {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/reviews', {
+      const response = await fetch('/api/reviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

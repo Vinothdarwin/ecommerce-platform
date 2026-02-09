@@ -16,7 +16,7 @@ function ReviewList({ productId }) {
   const fetchReviews = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8000/reviews/products/${productId}`);
+      const response = await fetch(`/api/reviews/products/${productId}`);
       const data = await response.json();
       
       if (response.ok) {

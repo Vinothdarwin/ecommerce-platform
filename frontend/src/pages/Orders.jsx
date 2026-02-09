@@ -31,7 +31,7 @@ function Orders({ user }) {
       const token = localStorage.getItem('token');
       const userId = JSON.parse(atob(token.split('.')[1])).userId;
 
-      const response = await fetch(`http://localhost:8000/orders/api/orders/user/${userId}`, {
+      const response = await fetch(`/api/orders/api/orders/user/${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
