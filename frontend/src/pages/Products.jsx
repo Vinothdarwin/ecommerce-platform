@@ -103,7 +103,7 @@ function Products() {
       <div className="products-grid">
         {products.map((product) => (
           <Link key={product._id} to={`/products/${product._id}`} className="product-card card">
-            <img src={product.imageUrl} alt={product.name} />
+            <img src={product.thumbnail} alt={product.name} />
             <div className="product-info">
               <h3>{product.name}</h3>
               <p className="product-category">{product.category}</p>
